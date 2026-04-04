@@ -93,5 +93,9 @@ class ViewController: UIViewController, StickerMenuViewDelegate, ImageStickerVie
     func imageStickerView_Deselected() {
         
     }
+    func imageStickerView_Deleted() {
+        
+    }
+    
     
 }

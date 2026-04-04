@@ -12,6 +12,7 @@ public protocol ImageStickerViewDelegate {
     func imageStickerView_WillBeDeselected()
     func imageStickerView_Selected()
     func imageStickerView_Deselected()
+    func imageStickerView_Deleted()
 }
 
 class ImageStickerView: UIView, UIGestureRecognizerDelegate {
@@ -157,6 +158,9 @@ class ImageStickerView: UIView, UIGestureRecognizerDelegate {
     // Cross Button
     @objc func crossButtonTapped() {
         self.removeFromSuperview()
+        if (delegate != nil) {
+            delegate?.imageStickerView_Deleted()
+        }
     }
     
     
